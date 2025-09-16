@@ -1,5 +1,21 @@
 ## repoqa
 
+## Tech Stack
+
+- TypeScript – indexing, query pipeline
+- Go – embedding engine, vector storage
+- OpenAI API – embeddings and LLM-generated explanations
+
+## Features
+
+- Indexes source code into semantically meaningful chunks
+- Embeds and stores code snippets for vector search
+
+**Work in progress:**
+
+- Improving chunking strategy and scaling retrieval
+- Retrieve top-k results and generate natural-language answers using LLMs
+
 #### 🧪 Workflow
 
 ```
@@ -17,24 +33,6 @@ $ repoqa ask "How is type-checking handled in the parser?"
 
 📎 Answer:
 The parser calls into `checker.go`, which recursively validates types using...
-```
-
-#### Repo Scaffold
-
-```
-repoqa/
-├── go_embed/
-│   ├── main.go          # CLI entrypoint
-│   ├── embed.go         # Embedding logic
-│   ├── search.go        # Cosine search logic
-│   ├── types.go
-│   └── utils.go
-├── ask.ts               # Takes top chunks, prompts LLM
-├── summarizer.ts        # Prompt building logic
-├── data/
-│   ├── chunked.jsonl
-│   └── .index.json
-
 ```
 
 ## 🧠 What I Learned
